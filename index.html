@@ -3,11 +3,52 @@
 
 <head>
   <title>HDT's devfolio — AI Engineer Portfolio</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
     content="Duc-Truong Hoang — AI Engineer & Researcher. Portfolio showcasing experience in deep learning, computer vision, and artificial intelligence.">
   <meta name="theme-color" content="#0a0a2e">
-  <link rel="icon" href="img/brand/logo.png" type="image/png">
+  <meta name="author" content="Duc-Truong Hoang">
+  <link rel="canonical" href="https://hdtruong802.github.io/devfolio/">
+  <link rel="icon" href="img/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/brand/logo.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/brand/logo.png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hdtruong802.github.io/devfolio/">
+  <meta property="og:title" content="HDT's devfolio — AI Engineer Portfolio">
+  <meta property="og:description"
+    content="Duc-Truong Hoang — AI Engineer & Researcher. Deep learning, computer vision, and AI.">
+  <meta property="og:image" content="https://hdtruong802.github.io/devfolio/img/profile/HDT.jpg">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HDT's devfolio — AI Engineer Portfolio">
+  <meta name="twitter:description"
+    content="Duc-Truong Hoang — AI Engineer & Researcher. Deep learning, computer vision, and AI.">
+  <meta name="twitter:image" content="https://hdtruong802.github.io/devfolio/img/profile/HDT.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Duc-Truong Hoang",
+    "alternateName": "HDT",
+    "jobTitle": "AI Engineer",
+    "url": "https://hdtruong802.github.io/devfolio/",
+    "image": "https://hdtruong802.github.io/devfolio/img/profile/HDT.jpg",
+    "email": "ductruong802@gmail.com",
+    "sameAs": [
+      "https://github.com/hdtruong802",
+      "https://www.linkedin.com/in/hdt802/",
+      "https://www.facebook.com/dtruong802/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "VinUniversity"
+    },
+    "knowsAbout": ["Artificial Intelligence", "Deep Learning", "Computer Vision", "Machine Learning"]
+  }
+  </script>
   <!-- Google Fonts: Orbitron (futuristic display) + Inter (clean body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +61,9 @@
 </head>
 
 <body>
+  <!-- Scroll progress -->
+  <div id="scroll-progress" role="presentation" aria-hidden="true"></div>
+
   <!-- Starfield Canvas Background -->
   <canvas id="starfield"></canvas>
 
@@ -27,25 +71,32 @@
   <div id="mouse-glow"></div>
 
   <!-- Navigation — Glass -->
-  <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="Main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item navbar-logo" href="#">
-        <img src="img/brand/logo.png" alt="HDT Logo" class="navbar-logo-img">
-        <span class="navbar-logo-text">HDT</span>
+      <a class="navbar-item navbar-logo" href="#hero-section" aria-label="HDT — Home">
+        <img src="img/brand/logo.svg" alt="" class="navbar-logo-img" width="36" height="36">
+        <span class="navbar-logo-text"></span>
       </a>
-      <div class="navbar-item is-hidden-desktop">
-        <a href="https://github.com/hdtruong802/devfolio" target="_blank" class="icon is-large has-text-light"
-          aria-label="GitHub">
-          <i class="fab fa-2x fa-github"></i>
-        </a>
-      </div>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-    <div class="navbar-menu">
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item nav-link" href="#about-section">About</a>
+        <a class="navbar-item nav-link" href="#experience-section">Experience</a>
+        <a class="navbar-item nav-link" href="#education-section">Education</a>
+        <a class="navbar-item nav-link" href="#awards-section">Awards</a>
+        <a class="navbar-item nav-link" href="#certifications-section">Certifications</a>
+        <a class="navbar-item nav-link" href="#courses-section">Courses</a>
+      </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          <a href="https://github.com/hdtruong802/devfolio" target="_blank" class="icon is-large has-text-light"
-            aria-label="GitHub">
-            <i class="fab fa-2x fa-github"></i>
+          <a href="https://github.com/hdtruong802/devfolio" target="_blank" rel="noopener noreferrer"
+            class="icon is-large has-text-light" aria-label="View source on GitHub">
+            <i class="fab fa-2x fa-github" aria-hidden="true"></i>
           </a>
         </div>
       </div>
@@ -54,18 +105,20 @@
 
   <!-- ==================== HERO ==================== -->
   <section class="hero is-primary" id="hero-section">
+    <div class="hero-drum-pattern" id="hero-drum-pattern" aria-hidden="true"></div>
     <div class="hero-body">
       <div class="container">
         <div class="level">
           <div class="level-item has-text-centered" data-animate="scale-in">
             <figure class="image profile-image">
-              <img class="is-rounded" src="img/profile/HDT.jpg" alt="Duc-Truong Hoang profile photo">
+              <img class="is-rounded" src="img/profile/HDT.jpg" alt="Duc-Truong Hoang profile photo" width="220"
+                height="220" fetchpriority="high">
             </figure>
           </div>
         </div>
         <div class="columns has-text-centered">
           <div class="column">
-            <h1 class="title is-1 hero-heading" data-animate="fade-up" data-animate-delay="1">
+            <h1 class="title is-1 hero-heading" data-animate="fade-up" data-animate-delay="1" id="hero-title">
               Duc-Truong Hoang
             </h1>
             <h2 class="subtitle hero-heading" data-animate="fade-up" data-animate-delay="2" id="hero-subtitle">
@@ -94,6 +147,10 @@
         </div>
       </div>
     </div>
+    <a href="#about-section" class="hero-scroll-cue" aria-label="Scroll to About section">
+      <span class="hero-scroll-cue-text">Scroll</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </a>
   </section>
 
   <!-- ==================== ABOUT ME ==================== -->
@@ -123,7 +180,7 @@
           <div class="media">
             <div class="media-left">
               <figure class="image is-48x48">
-                <img src="img/logos/vinuni-logo.jpg" alt="VinUniversity logo">
+                <img loading="lazy" src="img/logos/vinuni-logo.jpg" alt="VinUniversity logo">
               </figure>
             </div>
             <div class="media-content">
@@ -150,7 +207,7 @@
           <div class="media">
             <div class="media-left">
               <figure class="image is-48x48">
-                <img src="img/logos/fpt-software-logo.png" alt="FPT Software logo">
+                <img loading="lazy" src="img/logos/fpt-software-logo.png" alt="FPT Software logo">
               </figure>
             </div>
             <div class="media-content">
@@ -186,7 +243,7 @@
           <div class="media">
             <div class="media-left">
               <figure class="image is-48x48">
-                <img src="img/logos/hcmute-logo.png" alt="HCMUTE logo">
+                <img loading="lazy" src="img/logos/hcmute-logo.png" alt="HCMUTE logo">
               </figure>
             </div>
             <div class="media-content">
@@ -229,9 +286,9 @@
             <p class="ref-subtitle">Codex Community Hackathon - Hanoi</p>
           </div>
           <div class="ref-img-wrapper carousel-wrapper">
-            <img src="img/awards/Codex-Hackathon/suvietai-project-preview.png" alt="Codex Hackathon Photo 1"
+            <img loading="lazy" src="img/awards/Codex-Hackathon/suvietai-project-preview.png" alt="Codex Hackathon Photo 1"
               class="carousel-img active object-cover">
-            <img src="img/awards/Codex-Hackathon/DSC8379.JPG" alt="Codex Hackathon Photo 2"
+            <img loading="lazy" src="img/awards/Codex-Hackathon/DSC8379.JPG" alt="Codex Hackathon Photo 2"
               class="carousel-img object-cover">
             <button class="carousel-btn prev"
               onclick="event.stopPropagation(); window.prevCarouselSlide(this)">&#10094;</button>
@@ -248,7 +305,7 @@
               Intelligence</p>
           </div>
           <div class="ref-img-wrapper">
-            <img src="img/awards/xe-tu-hanh-2022.jpg" alt="Autonomous vehicle competition award">
+            <img loading="lazy" src="img/awards/xe-tu-hanh-2022.jpg" alt="Autonomous vehicle competition award">
           </div>
         </div>
 
@@ -259,7 +316,7 @@
             <p class="ref-subtitle">AI Challenge Ho Chi Minh City, Theme: "Event Retrieval from Visual Data"</p>
           </div>
           <div class="ref-img-wrapper">
-            <img src="img/awards/ai-challenge-2023.jpg" alt="AI Challenge certificate">
+            <img loading="lazy" src="img/awards/ai-challenge-2023.jpg" alt="AI Challenge certificate">
           </div>
         </div>
 
@@ -283,7 +340,7 @@
             <p class="ref-subtitle">GenAI & LLMs Module</p>
           </div>
           <div class="ref-img-wrapper">
-            <img src="img/certs/certificate_undefined_ductruong_hoang_43210708.png" alt="AI Vietnam Certificate">
+            <img loading="lazy" src="img/certs/certificate_undefined_ductruong_hoang_43210708.png" alt="AI Vietnam Certificate">
           </div>
         </div>
 
@@ -294,7 +351,7 @@
             <p class="ref-subtitle">Computer Vision & NLP Module</p>
           </div>
           <div class="ref-img-wrapper">
-            <img src="img/certs/certificate_undefined_ductruong_hoang_67513388.png" alt="AI Vietnam Certificate">
+            <img loading="lazy" src="img/certs/certificate_undefined_ductruong_hoang_67513388.png" alt="AI Vietnam Certificate">
           </div>
         </div>
 
@@ -305,7 +362,7 @@
             <p class="ref-subtitle">Machine Learning / Deep Learning Module</p>
           </div>
           <div class="ref-img-wrapper">
-            <img src="img/certs/certificate_undefined_ductruong_hoang_79240176.png" alt="AI Vietnam Certificate">
+            <img loading="lazy" src="img/certs/certificate_undefined_ductruong_hoang_79240176.png" alt="AI Vietnam Certificate">
           </div>
         </div>
 
@@ -316,7 +373,7 @@
             <p class="ref-subtitle">Data Analysis & Data Science Module</p>
           </div>
           <div class="ref-img-wrapper">
-            <img src="img/certs/certificate_undefined_ductruong_hoang_78183368.png" alt="AI Vietnam Certificate">
+            <img loading="lazy" src="img/certs/certificate_undefined_ductruong_hoang_78183368.png" alt="AI Vietnam Certificate">
           </div>
         </div>
 
@@ -327,7 +384,7 @@
             <p class="ref-subtitle">Artificial Intelligence</p>
           </div>
           <div class="ref-img-wrapper">
-            <img src="img/certs/samsung.jpg" alt="Samsung Innovation Campus certificate">
+            <img loading="lazy" src="img/certs/samsung.jpg" alt="Samsung Innovation Campus certificate">
           </div>
         </div>
       </div>
@@ -346,7 +403,7 @@
           <div class="media">
             <div class="media-left">
               <figure class="image is-48x48">
-                <img src="img/logos/aivn-logo.png" alt="AI Vietnam logo">
+                <img loading="lazy" src="img/logos/aivn-logo.png" alt="AI Vietnam logo">
               </figure>
             </div>
             <div class="media-content">
@@ -384,7 +441,7 @@
           <div class="media">
             <div class="media-left">
               <figure class="image is-48x48">
-                <img src="img/logos/protonx-logo.png" alt="ProtonX logo">
+                <img loading="lazy" src="img/logos/protonx-logo.png" alt="ProtonX logo">
               </figure>
             </div>
             <div class="media-content">
@@ -420,9 +477,9 @@
       </header>
       <section class="modal-card-body">
         <figure class="image carousel-wrapper">
-          <img src="img/awards/Codex-Hackathon/suvietai-project-preview.png" alt="Codex Hackathon Photo 1"
+          <img loading="lazy" src="img/awards/Codex-Hackathon/suvietai-project-preview.png" alt="Codex Hackathon Photo 1"
             class="carousel-img active object-cover">
-          <img src="img/awards/Codex-Hackathon/DSC8379.JPG" alt="Codex Hackathon Photo 2"
+          <img loading="lazy" src="img/awards/Codex-Hackathon/DSC8379.JPG" alt="Codex Hackathon Photo 2"
             class="carousel-img object-cover">
           <button class="carousel-btn prev" onclick="window.prevCarouselSlide(this)">&#10094;</button>
           <button class="carousel-btn next" onclick="window.nextCarouselSlide(this)">&#10095;</button>
@@ -451,7 +508,7 @@
       </header>
       <section class="modal-card-body">
         <figure class="image is-4by3">
-          <img src="img/awards/xe-tu-hanh-2022.jpg" alt="Award photo">
+          <img loading="lazy" src="img/awards/xe-tu-hanh-2022.jpg" alt="Award photo">
         </figure>
         <div class="content">
           <p><strong>1st Place - Programming Competition on Autonomous Vehicle with Image Processing and Artificial
@@ -476,7 +533,7 @@
       </header>
       <section class="modal-card-body">
         <figure class="image is-4by3">
-          <img src="img/awards/ai-challenge-2023.jpg" alt="Second award photo">
+          <img loading="lazy" src="img/awards/ai-challenge-2023.jpg" alt="Second award photo">
         </figure>
         <div class="content">
           <p><strong>Finalist - AI Challenge Ho Chi Minh City, theme: "Event Retrieval from Visual Data"</strong>
@@ -500,7 +557,7 @@
       </header>
       <section class="modal-card-body">
         <figure class="image">
-          <img src="img/certs/certificate_undefined_ductruong_hoang_43210708.png" alt="AI Vietnam Certificate">
+          <img loading="lazy" src="img/certs/certificate_undefined_ductruong_hoang_43210708.png" alt="AI Vietnam Certificate">
         </figure>
         <div class="content">
           <p><strong>AI VIETNAM - GenAI & LLMs Module</strong>
@@ -524,7 +581,7 @@
       </header>
       <section class="modal-card-body">
         <figure class="image">
-          <img src="img/certs/certificate_undefined_ductruong_hoang_67513388.png" alt="AI Vietnam Certificate">
+          <img loading="lazy" src="img/certs/certificate_undefined_ductruong_hoang_67513388.png" alt="AI Vietnam Certificate">
         </figure>
         <div class="content">
           <p><strong>AI VIETNAM - Computer Vision & NLP Module</strong>
@@ -548,7 +605,7 @@
       </header>
       <section class="modal-card-body">
         <figure class="image">
-          <img src="img/certs/certificate_undefined_ductruong_hoang_79240176.png" alt="AI Vietnam Certificate">
+          <img loading="lazy" src="img/certs/certificate_undefined_ductruong_hoang_79240176.png" alt="AI Vietnam Certificate">
         </figure>
         <div class="content">
           <p><strong>AI VIETNAM - Machine Learning / Deep Learning Module</strong>
@@ -572,7 +629,7 @@
       </header>
       <section class="modal-card-body">
         <figure class="image">
-          <img src="img/certs/certificate_undefined_ductruong_hoang_78183368.png" alt="AI Vietnam Certificate">
+          <img loading="lazy" src="img/certs/certificate_undefined_ductruong_hoang_78183368.png" alt="AI Vietnam Certificate">
         </figure>
         <div class="content">
           <p><strong>AI VIETNAM - Data Analysis & Data Science Module</strong>
@@ -596,7 +653,7 @@
       </header>
       <section class="modal-card-body">
         <figure class="image is-4by3">
-          <img src="img/certs/samsung.jpg" alt="Samsung certificate photo">
+          <img loading="lazy" src="img/certs/samsung.jpg" alt="Samsung certificate photo">
         </figure>
         <div class="content">
           <p><strong>Samsung Innovation Campus - Artificial Intelligence</strong>
@@ -617,6 +674,10 @@
       <p>Copyright © 2026 Hoang Duc Truong. All rights reserved.</p>
     </div>
   </footer>
+
+  <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
 
   <script src="js/bundle.js"></script>
   <script src="js/custom.js"></script>

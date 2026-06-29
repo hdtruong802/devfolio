@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="hdtGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="hdtGradGold" x1="32" y1="10" x2="32" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5de8c"/>
+      <stop offset="100%" stop-color="#d6b25c"/>
+    </linearGradient>
+    <filter id="hdtGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="32" cy="32" r="29" stroke="url(#hdtGrad)" stroke-width="1.5" opacity="0.85"/>
+  <!-- Dong Son 14-point star (simplified) -->
+  <g filter="url(#hdtGlow)" transform="translate(32 32)">
+    <path d="M0,-14 L2.5,-5 L12,-5 L4,1.5 L7,11 L0,5.5 L-7,11 L-4,1.5 L-12,-5 L-2.5,-5 Z"
+          fill="url(#hdtGradGold)" stroke="url(#hdtGrad)" stroke-width="0.8" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="3" fill="url(#hdtGrad)" opacity="0.9"/>
+  </g>
+  <!-- HDT monogram arcs -->
+  <text x="32" y="58" text-anchor="middle" font-family="Orbitron, sans-serif" font-size="9" font-weight="700"
+        letter-spacing="2" fill="url(#hdtGrad)">HDT</text>
+</svg>
